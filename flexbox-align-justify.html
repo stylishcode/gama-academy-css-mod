@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-div {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: baseline; /* alinhamento padrão */
+            align-items: flex-start;/* alinhamento vertical ao começo do container flex */
+            align-items: center; /* alinhamento vertical ao centro */
+            align-items: flex-end; /* alinhamento vertical ao fim do container flex */
+
+            justify-content: space-between; /* Espaço entre os elementos, mas não entre bordas e topo */
+            justify-content: space-around; /* Espaço entre os elementos, também entre bordas e topo */
+        }
+
+        .child-div1 {
+            border: 1px solid black;
+            width: 20px;
+            height: 15px;
+        }
+
+        .child-div2 {
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+        }
+
+        .child-div3 {
+            border: 1px solid black;
+            width: 20px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-div">
+        <div class="child-div1">
+            1
+        </div>
+
+        <div class="child-div2">
+            2
+        </div>
+
+        <div class="child-div3">
+            3
+        </div>
+    </div>
+</body>
+</html>
