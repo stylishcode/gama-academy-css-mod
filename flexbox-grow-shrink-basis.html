@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        flex-grow fórmula
+            
+        largura total de div: 500px
+        espaço sobrando da div: 300px (flex-basis de 100px para as divs filhas de 200px total, sobra 300px)
+
+    
+        fator de crescimento fórmula
+        FT -> Fator de crescimento
+        FTF -> fator de crescimento do filho
+        FCTF -> fator de de crescimento de todos os filhos
+        ES -> Espaço sobrando da div pai
+
+        Fórmula: FTF/FCTF x ES = resultado
+
+        filho 1: 2/3 x 300 = 200px (cresce 200px + 100px do flex-basis totalizando 300px)
+        filho 2: 1/3 x 300 = 100px (cresce 100px + 100px do flex-basis totalizando 200px)
+
+        */
+
+        /*
+        flex-shrink fórmula
+        
+        largura total de div: 500px
+        espaço sobrando da div: -100px (flex-basis de 300px para as divs filhas de 500px total, sobra -100px)
+
+        
+        fator de encolhimento fórmula
+        FE -> Fator de encolhimento
+        TI -> Tamanho inicial
+        TII -> Tamanho inicial irmão
+        FI -> Fator do irmão
+        ES -> Espaço sobrando da div pai
+
+        Fórmula: (FE x TI) / ((FE x TI) + (FI x TII)) - ES = resultado
+
+        filho 1: (2 x 300) / ((2 x 300) + (1 x 300)) x (-100) => (600 / 900) x (-100) => 0.667 x (-100) = -66.7px
+        filho 2: (1 x 300) / ((1 x 300) + (2 x 300)) x (-100) => (300 / 900) x (-100) => 0.333 x (-100) = -33.3px 
+        */
+
+        .flex-div {
+            width: 500px;
+            display: flex;
+            background-color: cadetblue;
+        }
+
+        .child-div1 {
+            border: 1px solid red;
+            flex-basis: 300px;
+            /* flex-grow: 2; escala de crescimento 2x */
+            flex-shrink: 2; /*escala de encolhimento*/
+        }
+
+        .child-div2 {
+            border: 1px solid red;
+            flex-basis: 300px;
+            /* flex-grow: 1; escala de crescimento 1x */
+            flex-shrink: 1; /* escala de escolhimento 1x*/
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-div">
+        <div class="child-div1">
+            1
+        </div>
+
+        <div class="child-div2">
+            2
+        </div>
+    </div>
+</body>
+</html>
